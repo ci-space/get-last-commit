@@ -1,0 +1,29 @@
+name: Get last commit from GitHub repository
+description: Get last commit from GitHub repository
+inputs:
+  owner:
+    description: "The name of the owner of the repo. Used to identify the owner of the repository. Default: Current owner"
+    required: false
+    default: ${{ github.repository_owner }}
+
+  repo:
+    description: "The name of the repository. Default: Current repository"
+    required: false
+    default: ${{ github.event.repository.name }}
+
+outputs:
+  sha:
+    description: "Commit SHA"
+  message:
+    description: "Commit message"
+  url:
+    description: "Commit URL"
+  author_login:
+    description: "Login of author"
+
+branding:
+  icon: 'message-square'
+  color: 'blue'
+runs:
+  using: docker
+  image: docker://ghcr.io/ci-space/get-last-commit:v0.0.0
