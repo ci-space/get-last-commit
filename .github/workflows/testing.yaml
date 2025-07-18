@@ -69,6 +69,7 @@ jobs:
         env:
           INPUT_OWNER: ci-space
           INPUT_REPO: get-last-commit
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: go run ./main.go
 
       - name: Print values
