@@ -50,3 +50,24 @@ jobs:
 
       - name: Run tests
         run: go test ./...
+
+
+  e2e-test:
+    name: e2e-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4 # action page: <https://github.com/actions/setup-go>
+        with:
+          go-version: stable
+
+      - name: Run get-last-commit
+        id: commit
+        run: go run ./main.go
+
+      - name: Print values
+        run: 'echo " sha: ${{ steps.commit.outputs.sha }}\n message: ${{ steps.commit.outputs.sha }} url: ${{ steps.commit.outputs.url }} author_login: ${{ steps.commit.outputs.author_login }}"'
+
