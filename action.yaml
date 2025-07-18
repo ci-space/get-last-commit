@@ -1,4 +1,4 @@
-name: Get last commit from GitHub repository
+name: get-last-commit
 description: Get last commit from GitHub repository
 inputs:
   owner:
