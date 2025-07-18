@@ -66,6 +66,9 @@ jobs:
 
       - name: Run get-last-commit
         id: commit
+        env:
+          INPUT_OWNER: ci-space
+          INPUT_REPO: get-last-commit
         run: go run ./main.go
 
       - name: Print values
