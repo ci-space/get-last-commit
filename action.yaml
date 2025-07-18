@@ -22,7 +22,7 @@ outputs:
     description: "Login of author"
 
 branding:
-  icon: 'message-square'
+  icon: 'git-commit'
   color: 'blue'
 runs:
   using: docker
